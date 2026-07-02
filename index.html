@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Snake Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">🐍 Snake</h1>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Score</span>
+          <span id="score" class="value">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Best</span>
+          <span id="highScore" class="value">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="difficulty-group" role="group" aria-label="Difficulty selector">
+        <button class="diff-btn active" data-difficulty="easy">Easy</button>
+        <button class="diff-btn" data-difficulty="medium">Medium</button>
+        <button class="diff-btn" data-difficulty="hard">Hard</button>
+      </div>
+
+      <button id="muteBtn" class="icon-btn" aria-label="Mute/Unmute sound" title="Toggle sound">
+        <span id="muteIcon">🔊</span>
+      </button>
+    </div>
+
+    <!-- Game board -->
+    <div class="board-container">
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Start overlay -->
+      <div id="startOverlay" class="overlay">
+        <h2>Ready to play?</h2>
+        <p>Use Arrow Keys / WASD or the on-screen controls.</p>
+        <button id="startBtn" class="primary-btn">Start Game</button>
+      </div>
+
+      <!-- Pause overlay -->
+      <div id="pauseOverlay" class="overlay hidden">
+        <h2>Paused</h2>
+        <button id="resumeBtn" class="primary-btn">Resume</button>
+      </div>
+
+      <!-- Game over overlay -->
+      <div id="gameOverOverlay" class="overlay hidden">
+        <h2>Game Over</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <p id="newHighScoreMsg" class="new-high-score hidden">🎉 New High Score!</p>
+        <button id="playAgainBtn" class="primary-btn">Play Again</button>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-bar">
+      <button id="pauseBtn" class="control-btn" disabled>Pause</button>
+      <button id="restartBtn" class="control-btn">Restart</button>
+    </div>
+
+    <!-- Touch controls -->
+    <div class="touch-controls" id="touchControls">
+      <button class="touch-btn up" data-dir="up" aria-label="Move up">▲</button>
+      <button class="touch-btn left" data-dir="left" aria-label="Move left">◀</button>
+      <button class="touch-btn right" data-dir="right" aria-label="Move right">▶</button>
+      <button class="touch-btn down" data-dir="down" aria-label="Move down">▼</button>
+    </div>
+
+    <footer class="footer">
+      <p>Made with HTML, CSS &amp; vanilla JavaScript</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
